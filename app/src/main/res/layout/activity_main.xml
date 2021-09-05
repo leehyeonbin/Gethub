@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:padding="10dp">
+
+    <TextView
+        android:layout_above="@+id/inputUserEt"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="github id를 입력해주세요"
+        android:textSize="30dp"
+        android:layout_marginBottom="50dp"/>
+
+    <EditText
+        android:id="@+id/inputUserEt"
+        android:layout_centerInParent="true"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:hint="user_name"/>
+
+    <Button
+        android:id="@+id/submitBtn"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="submit"
+        android:layout_below="@id/inputUserEt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        />
+
+</RelativeLayout>
