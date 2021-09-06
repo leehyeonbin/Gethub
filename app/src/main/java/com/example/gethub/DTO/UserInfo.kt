@@ -5,5 +5,5 @@ data class UserInfo(
     val followers : Int,
     val following : Int,
     val company : String,
-    val html_user : String
+    val html_url : String
 )

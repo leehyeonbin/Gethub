@@ -8,7 +8,7 @@ object RetrofitBuilder {
 
     init {
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://api.github.com/")
+            .baseUrl("https://api.github.com/users/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
