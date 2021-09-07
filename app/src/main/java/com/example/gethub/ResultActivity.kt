@@ -22,13 +22,14 @@ class ResultActivity : AppCompatActivity() {
         setContentView(mbinding.root)
 
         Toast.makeText(this, "테스트", Toast.LENGTH_SHORT).show()
-        RetrofitBuilder.api.getUserInfo().enqueue(object : retrofit2.Callback<UserInfo> {
+        RetrofitBuilder.api.getUserInfo(userid = User.userid).enqueue(object : retrofit2.Callback<UserInfo> {
             override fun onResponse(call: Call<UserInfo>, response: Response<UserInfo>) {
                 val userinfo = response.body()
                 mbinding.followers.text = userinfo?.followers.toString()
                 mbinding.following.text = userinfo?.following.toString()
                 mbinding.userid.text = User.userid
                 mbinding.company.text = userinfo?.company.toString()
+                mbinding.name.text = userinfo?.name.toString()
                 User.URl = userinfo?.html_url.toString()
                 Log.d(TAG,"onResponse: 유저아이디: ${userinfo?.userId}, 팔로워 : ${userinfo?.followers}, 팔로잉 : ${userinfo?.following}," +
                         "회사 : ${userinfo?.company}, 깃허브 링크 : ${User.URl}")
