@@ -4,21 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ResultActivity">
+    tools:context=".ResultActivity"
+    android:padding="10dp">
     <TextView
-        android:id="@+id/userid"
+        android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="user"
-        android:textSize="40sp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="70dp"/>
+        android:text="name"
+        android:textSize="50sp"
+        android:layout_marginTop="50dp"
+        />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:weightSum="2"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/userid"
+        android:layout_below="@+id/name"
         android:orientation="horizontal"
         android:gravity="center"
         android:layout_marginTop="40dp"
@@ -42,12 +44,37 @@
 
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/github_log"
-        android:src="@drawable/github_log"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_centerInParent="true"/>
+
+
+    <LinearLayout
+        android:id="@+id/github"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/show_github"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="깃허브로 이동"
+            android:layout_gravity="center"/>
+        <ImageView
+            android:id="@+id/github_log"
+            android:src="@drawable/github_log"
+            android:layout_width="200dp"
+            android:layout_height="200dp" />
+    </LinearLayout>
+
+
+
+    <TextView
+        android:id="@+id/userid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="user"
+        android:textSize="40sp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/github"/>
 
 
     <TextView
@@ -56,8 +83,8 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="company"
-        android:textSize="40sp"
-        android:layout_below="@+id/github_log"
+        android:textSize="30sp"
+        android:layout_below="@+id/userid"
         android:layout_marginTop="50dp"/>
 
 
