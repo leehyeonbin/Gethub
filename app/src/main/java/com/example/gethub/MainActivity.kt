@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.gethub.databinding.ActivityMainBinding
+import com.example.gethub.splash.SplashActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,12 +18,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(mbinding.root)
 
 
+
         mbinding.submitBtn.setOnClickListener {
 
 
              User.userid = mbinding.inputUserEt.text.toString().trim()
 
-            startActivity(Intent(this, ResultActivity::class.java))
+            startActivity(Intent(this, SplashActivity::class.java))
+            overridePendingTransition(0, 0)
             finish()
 
         }
