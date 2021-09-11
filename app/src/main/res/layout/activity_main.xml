@@ -12,16 +12,17 @@
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="github id를 입력해주세요"
+        android:text="GetHub"
         android:textSize="30dp"
-        android:layout_marginBottom="50dp"/>
+        android:layout_marginBottom="100dp"/>
 
     <EditText
         android:id="@+id/inputUserEt"
         android:layout_centerInParent="true"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:hint="user_name"/>
+        android:layout_marginBottom="100dp"
+        android:hint="github id를 입력해주세요"/>
 
     <Button
         android:id="@+id/submitBtn"

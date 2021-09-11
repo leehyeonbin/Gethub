@@ -21,7 +21,6 @@ class ResultActivity : AppCompatActivity() {
         mbinding = ActivityResultBinding.inflate(layoutInflater)
         setContentView(mbinding.root)
 
-        Toast.makeText(this, "테스트", Toast.LENGTH_SHORT).show()
         RetrofitBuilder.api.getUserInfo(userid = User.userid).enqueue(object : retrofit2.Callback<UserInfo> {
             override fun onResponse(call: Call<UserInfo>, response: Response<UserInfo>) {
                 val userinfo = response.body()
