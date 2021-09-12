@@ -5,8 +5,7 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-//import android.widget.Toast
-//import com.bumptech.glide.Glide
+import com.bumptech.glide.Glide
 import com.example.gethub.DTO.UserInfo
 import com.example.gethub.databinding.ActivityResultBinding
 import retrofit2.Call
@@ -31,9 +30,9 @@ class ResultActivity : AppCompatActivity() {
                 mbinding.company.text = userinfo?.company.toString()
                 mbinding.name.text = userinfo?.name.toString()
                 User.URl = userinfo?.html_url.toString()
-//                Glide.with(this@ResultActivity)
-//                    .load("${userinfo?.avatar_url.toString()}")
-//                    .into(mbinding.githubLog)
+                Glide.with(this@ResultActivity)
+                    .load("${userinfo?.avatar_url.toString()}")
+                    .into(mbinding.githubLog)
                 Log.d(TAG,"onResponse: 유저아이디: ${userinfo?.userId}, 팔로워 : ${userinfo?.followers}, 팔로잉 : ${userinfo?.following}," +
                         "회사 : ${userinfo?.company}, 깃허브 링크 : ${User.URl}")
             }
