@@ -29,6 +29,7 @@ class ResultActivity : AppCompatActivity() {
                 mbinding.userid.text = User.userid
                 mbinding.company.text = userinfo?.company.toString()
                 mbinding.name.text = userinfo?.name.toString()
+//                mbinding.githubLog
                 User.URl = userinfo?.html_url.toString()
                 Log.d(TAG,"onResponse: 유저아이디: ${userinfo?.userId}, 팔로워 : ${userinfo?.followers}, 팔로잉 : ${userinfo?.following}," +
                         "회사 : ${userinfo?.company}, 깃허브 링크 : ${User.URl}")
