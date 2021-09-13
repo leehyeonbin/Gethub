@@ -47,5 +47,9 @@ class ResultActivity : AppCompatActivity() {
             intent.data = Uri.parse("${User.URl.toString()}")
             startActivity(intent)
         }
+
+        mbinding.backButton.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+        }
     }
 }

@@ -1,7 +1,5 @@
 package com.example.gethub.DTO
 
-import android.widget.ImageView
-
 data class UserInfo(
     val avatar_url : String,
     val userId : String,
