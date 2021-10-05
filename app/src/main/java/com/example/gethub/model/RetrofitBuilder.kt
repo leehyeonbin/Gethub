@@ -1,4 +1,4 @@
-package com.example.gethub
+package com.example.gethub.model
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

@@ -1,6 +1,5 @@
-package com.example.gethub
+package com.example.gethub.model
 
-import com.example.gethub.DTO.UserInfo
 import retrofit2.http.GET
 import retrofit2.http.Path
 

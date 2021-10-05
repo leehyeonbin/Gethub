@@ -1,10 +1,9 @@
-package com.example.gethub.splash
+package com.example.gethub.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import com.example.gethub.ResultActivity
 import com.example.gethub.databinding.ActivitySplashBinding
 
 class SplashActivity : AppCompatActivity() {

@@ -11,10 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Gethub">
-        <activity android:name=".splash.SplashActivity"></activity>
-        <activity android:name=".ResultActivity" />
+        <activity android:name=".view.SplashActivity"></activity>
+        <activity android:name=".view.ResultActivity" />
         <activity
-            android:name=".MainActivity"
+            android:name=".view.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

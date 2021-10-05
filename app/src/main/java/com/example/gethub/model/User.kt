@@ -1,4 +1,4 @@
-package com.example.gethub
+package com.example.gethub.model
 
 object User{
     var userid = ","

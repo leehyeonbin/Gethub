@@ -1,37 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:padding="10dp">
+<layout>
+<data>
+    <variable
+        name="viewModel"
+        type="com.example.gethub.viewmodel.MainViewModel" />
+</data>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.MainActivity"
+        android:padding="10dp">
 
-    <TextView
-        android:layout_above="@+id/inputUserEt"
-        android:layout_centerHorizontal="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="GetHub"
-        android:textSize="30dp"
-        android:layout_marginBottom="100dp"/>
+        <TextView
+            android:layout_above="@+id/inputUserEt"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GetHub"
+            android:textSize="30dp"
+            android:layout_marginBottom="100dp"/>
 
-    <EditText
-        android:id="@+id/inputUserEt"
-        android:layout_centerInParent="true"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
-        android:hint="github id를 입력해주세요"/>
+        <EditText
+            android:id="@+id/inputUserEt"
+            android:layout_centerInParent="true"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="100dp"
+            android:hint="github id를 입력해주세요"/>
 
-    <Button
-        android:id="@+id/submitBtn"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:text="submit"
-        android:layout_below="@id/inputUserEt"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        />
+        <Button
+            android:id="@+id/submitBtn"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="submit"
+            android:layout_below="@id/inputUserEt"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            />
 
-</RelativeLayout>
+    </RelativeLayout>
+</layout>

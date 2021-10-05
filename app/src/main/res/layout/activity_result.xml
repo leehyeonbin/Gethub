@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ResultActivity"
+    tools:context=".view.ResultActivity"
     android:padding="10dp">
 
 
@@ -24,7 +24,7 @@
         android:layout_centerVertical="true"
         android:layout_marginLeft="50dp"
         android:layout_marginTop="50dp"
-        android:text="name"
+        android:text="@{}"
         android:textSize="40sp"
         android:textColor="#333333"/>
 
@@ -56,7 +56,7 @@
         android:layout_height="300dp"
         android:src="@drawable/github_log"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp" />
+        android:layout_marginTop="30dp"/>
 
 
     <LinearLayout
