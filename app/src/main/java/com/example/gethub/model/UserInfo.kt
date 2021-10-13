@@ -1,11 +1,13 @@
 package com.example.gethub.model
 
-data class UserInfo(
-    val avatar_url : String?,
-    val userId : String?,
-    val followers : Int?,
-    val following : Int?,
-    val company : String?,
-    val html_url : String?,
-    val name : String?
-)
+object UserInfo {
+    var avatar_url: String? = ""
+    var userId: String? = ""
+    var followers: Int? = 0
+    var following: Int? = 0
+    var company: String? = ""
+    var html_url: String? = ""
+    var name: String =""
+}
+
+

@@ -36,8 +36,13 @@ class MainViewModel : ViewModel(){
         RetrofitBuilder.api.getUserInfo(userid = User.userid).enqueue(object : retrofit2.Callback<UserInfo> {
             override fun onResponse(call: Call<UserInfo>, response: Response<UserInfo>) {
                 val userinfo = response.body()
-                UserInfo(userinfo?.avatar_url,userinfo!!.userId,userinfo.followers,
-                    userinfo.following,userinfo.company,userinfo.html_url,userinfo.name)
+                UserInfo.avatar_url = userinfo?.avatar_url
+                UserInfo.company= userinfo?.company
+                UserInfo.followers = userinfo?.followers
+                UserInfo.following = userinfo?.following
+                UserInfo.html_url = userinfo?.html_url
+                UserInfo.name = userinfo!!.name
+                UserInfo.userId = userinfo!!.name
 
             }
 

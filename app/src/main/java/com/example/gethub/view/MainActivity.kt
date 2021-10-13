@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.gethub.model.User
 import com.example.gethub.databinding.ActivityMainBinding
+import com.example.gethub.model.UserInfo
 import com.example.gethub.viewmodel.MainViewModel
 
 class MainActivity : AppCompatActivity() {
