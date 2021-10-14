@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.gethub.model.ResponseUserInfo
 import com.example.gethub.model.RetrofitBuilder
 import com.example.gethub.model.User
 import com.example.gethub.model.UserInfo
@@ -20,6 +21,9 @@ class MainViewModel : ViewModel(){
 
     val load : LiveData<Int> = _load
 
+    val response : LiveData<UserInfo> get() = _response
+    private val _response = MutableLiveData<UserInfo>()
+
     val TAG = "로그"
 
     init {
@@ -33,20 +37,39 @@ class MainViewModel : ViewModel(){
     fun getId() = id
 
     fun setloadbutton () {
-        RetrofitBuilder.api.getUserInfo(userid = User.userid).enqueue(object : retrofit2.Callback<UserInfo> {
-            override fun onResponse(call: Call<UserInfo>, response: Response<UserInfo>) {
+        RetrofitBuilder.api.getUserInfo(userid = User.userid).enqueue(object : retrofit2.Callback<ResponseUserInfo> {
+/*            override fun onResponse(call: Call<UserInfo>, response: Response<UserInfo>) {
                 val userinfo = response.body()
+                Log.d("log","${userinfo?.following}")
                 UserInfo.avatar_url = userinfo?.avatar_url
                 UserInfo.company= userinfo?.company
                 UserInfo.followers = userinfo?.followers
                 UserInfo.following = userinfo?.following
                 UserInfo.html_url = userinfo?.html_url
                 UserInfo.name = userinfo!!.name
-                UserInfo.userId = userinfo!!.name
-
+                UserInfo.userId = userinfo.name
+                _response.value = userinfo
             }
 
             override fun onFailure(call: Call<UserInfo>, t: Throwable) {
+                Log.d("error", t.message.toString())
+            }*/
+
+            override fun onResponse(
+                call: Call<ResponseUserInfo>,
+                response: Response<ResponseUserInfo>
+            ) {
+                val userinfo = response.body()
+                Log.d("log","${userinfo?.following}, $userinfo")
+                UserInfo.avatar_url = userinfo?.avatar_url
+                UserInfo.company= userinfo?.company
+                UserInfo.followers = userinfo?.followers
+                UserInfo.following = userinfo?.following
+                UserInfo.html_url = userinfo?.html_url
+                UserInfo.name = userinfo!!.name
+                UserInfo.userId = userinfo.name           }
+
+            override fun onFailure(call: Call<ResponseUserInfo>, t: Throwable) {
                 Log.d("error", t.message.toString())
             }
         })

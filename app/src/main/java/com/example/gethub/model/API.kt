@@ -7,5 +7,5 @@ interface API {
     // ID 받아오기
     @GET("users/{userid}")
 
-    fun getUserInfo(@Path("userid")userid:String): retrofit2.Call<UserInfo>
+    fun getUserInfo(@Path("userid")userid:String): retrofit2.Call<ResponseUserInfo>
 }
