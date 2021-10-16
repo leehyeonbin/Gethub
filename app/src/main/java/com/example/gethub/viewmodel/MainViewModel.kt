@@ -15,29 +15,33 @@ class MainViewModel : ViewModel(){
 
     private var id = ""
 
-    //LiveData
     //값이 변경되는 경우 MutableLiveData 로 선언한다.
-    val _load = MutableLiveData<Int>()
+//    val _load = MutableLiveData<Int>()
+//
+//    val load : LiveData<Int> = _load
 
-    val load : LiveData<Int> = _load
+    // LiveData 는 값을 변경할 수 없고, 읽기만 가능하다.
+    val getResponse : LiveData<ResponseUserInfo> get() = _response
 
-    val response : LiveData<UserInfo> get() = _response
-    private val _response = MutableLiveData<UserInfo>()
+    // MutableLiveData 는 값 변경 또한 가능하다
+    private val _response = MutableLiveData<ResponseUserInfo>()
 
-    val TAG = "로그"
+//    val TAG = "로그"
 
-    init {
-        _load.value = 0
-    }
+//    init {
+//        _load.value = 0
+//    }
 
-    fun setid (newid : String) {
-        id = newid
-    }
-
-    fun getId() = id
+//    fun setid (newid : String) {
+//        id = newid
+//    }
+//
+//    fun getId() = id
 
     fun setloadbutton () {
+        // data class 는 값을 넣어주는 곳이 아니라 들어오는 값을 형태를 알려주는 것
         RetrofitBuilder.api.getUserInfo(userid = User.userid).enqueue(object : retrofit2.Callback<ResponseUserInfo> {
+
 /*            override fun onResponse(call: Call<UserInfo>, response: Response<UserInfo>) {
                 val userinfo = response.body()
                 Log.d("log","${userinfo?.following}")
@@ -67,7 +71,8 @@ class MainViewModel : ViewModel(){
                 UserInfo.following = userinfo?.following
                 UserInfo.html_url = userinfo?.html_url
                 UserInfo.name = userinfo!!.name
-                UserInfo.userId = userinfo.name           }
+                UserInfo.userId = userinfo.userId
+            }
 
             override fun onFailure(call: Call<ResponseUserInfo>, t: Throwable) {
                 Log.d("error", t.message.toString())

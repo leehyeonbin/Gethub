@@ -38,7 +38,7 @@ class ResultActivity : AppCompatActivity() {
         }*/
         mBinding.followers.text = followers.toString()
         mBinding.following.text = following.toString()
-       // mBinding.userid.text = User.userid
+        mBinding.userid.text = UserInfo.userId
         mBinding.company.text = UserInfo.company.toString()
         mBinding.name.text = name.toString()
         User.URl = html_url.toString()
